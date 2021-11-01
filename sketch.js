@@ -11,7 +11,7 @@ function setup()
   createCanvas(windowWidth, windowHeight);
   ship = createSprite(windowWidth/2, windowHeight/2,60,40);
 
-  player = createSprite(windowWidth/2, windowHeight/2 -50, 20, 20);
+  player = createSprite(windowWidth/2 + 20, windowHeight/2 -50, 20, 20);
 
   asteroid = createSprite(windowWidth, windowHeight/2, 120, 120)
   asteroid.y = random( 0, windowHeight)
