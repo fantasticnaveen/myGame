@@ -6,20 +6,29 @@ var asteroid
 var asteroid2
 var gameOver
 var GAMEOVER = 'false'
-function setup() 
-{
+function preload(){
+  asteroidIMG = loadImage('asteroid.png')
+  shipImg = loadImage('ship.png')
+}
+function setup() {
   createCanvas(windowWidth, windowHeight);
   ship = createSprite(windowWidth/2, windowHeight/2,60,40);
+  ship.addImage('ship', shipImg)
+  
 
   player = createSprite(windowWidth/2 + 20, windowHeight/2 -50, 20, 20);
 
   asteroid = createSprite(windowWidth, windowHeight/2, 120, 120)
   asteroid.y = random( 0, windowHeight)
   asteroid.velocityX = -3
+  asteroid.addImage('asteroid', asteroidIMG)
+  asteroid.scale = 2
 
   asteroid2 = createSprite(windowWidth, windowHeight/2, 120, 120)
   asteroid2.y = random( 0, windowHeight)
   asteroid2.velocityX = -2
+  asteroid2.addImage('asteroid', asteroidIMG)
+  asteroid2.scale = 2.5
 
   gameOver = createSprite(windowWidth, windowHeight,windowWidth*2,5);
 }
