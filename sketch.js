@@ -9,6 +9,7 @@ var GAMEOVER = 'false'
 function preload(){
   asteroidIMG = loadImage('asteroid.png')
   shipImg = loadImage('ship.png')
+    playerImg = loadImage('player.png')
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -17,6 +18,8 @@ function setup() {
   
 
   player = createSprite(windowWidth/2 + 20, windowHeight/2 -50, 20, 20);
+  player.addImage('player', playerImg)
+  player.scale = 0.5
 
   asteroid = createSprite(windowWidth, windowHeight/2, 120, 120)
   asteroid.y = random( 0, windowHeight)
